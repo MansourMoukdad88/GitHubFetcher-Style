@@ -83,13 +83,20 @@ class App extends React.Component {
   renderUser(user) {
     return (
       <div className="resultBadge">
-        <img src={user.avatar_url} width="128" height="128" />
+        <span className="userImg">
+          <img src={user.avatar_url} width="128" height="128" />
+        </span>
         <p className="userInfo">
-          Username: <br />
+          <span className="bold"> Username:</span>
           {user.username}
         </p>
-        <p className="followerInfo">{user.followers} Followers</p>
-        <p className="followingInfo">Following {user.following} users</p>
+        <p className="followerInfo">
+          <span className="bold"> Followers:</span>
+          {user.followers}
+        </p>
+        <p className="followingInfo">
+          <span className="bold">Following:</span> {user.following}
+        </p>
       </div>
     );
   }
@@ -98,22 +105,37 @@ class App extends React.Component {
     const { user, repos } = this.state;
     return (
       <div className="GitHubSearch">
-        <header className="Search-header">
-          <img className="logo" src={logo} width="128" height="128" />
+        <div className="Search-header">
+          <header className="Search-header">
+            <img className="logo" src={logo} width="128" height="128" />
+            <h1 className="header1">Github Fetcher</h1>
+            <p className="headSentence">
+              Get User's Repos and the Other Details by typing Username
+            </p>
+          </header>
+        </div>
 
-          <h1 className="header1">Github Fetcher</h1>
-        </header>
-        <h2>Github User Search </h2>
-        <form onSubmit={e => this.handleSubmit(e)}>
-          <input ref="username" type="text" placeholder="username" />
-        </form>
+        <div className="container">
+          <br />
+          <br />
+          <form onSubmit={e => this.handleSubmit(e)}>
+            <input
+              ref="username"
+              type="text"
+              placeholder="Search By Username"
+            />
+          </form>
+        </div>
+
         <div className="Search-intro">
-          <h4> User info: </h4>
+          <h4> User info</h4>
           <div className="userInfo">{user && this.renderUser(user)}</div>
         </div>
-        <div>
-          <RepoList repos={this.state.repos} />
+
+        <div className="ListView">
           <br />
+          <RepoList repos={this.state.repos} />
+          <h3>Repo List: </h3>
           <ListView repos={this.state.repos} />
         </div>
       </div>

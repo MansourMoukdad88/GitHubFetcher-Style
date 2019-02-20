@@ -16,21 +16,87 @@ code {
 .Search-header {
   background: black;
   color: white;
-  padding: 30px;
+  padding: 10px;
+  margin-bottom: 10px;
 }
 .header1 {
   font-size: 60px;
   position: relative;
   right: 275px;
 }
-.userInfo {
-  border: 1px solid black;
+.headSentence {
+  position: relative;
+  right: 275px;
 }
-.reposListNum {
-  border: 1px solid gray;
+.container {
+  /* background: gray; */
 }
+.resultBadge {
+  /* border: 1px solid blue; */
+  /* text-align: center; */
+}
+.userImg {
+  position: relative;
+  left: 5px;
+}
+.bold {
+  font-weight: bold;
+}
+/* .userInfo{
+  position: relative;
+  right: 300px;
+}
+.followerInfo{
+    position: relative;
+  right: 300px;
+}
+.followingInfo{
+    position: relative;
+  right: 300px;
+} */
+/* .reposListNum {
+  border: 1px solid red;
+} */
 .logo {
   position: absolute;
   left: 200px;
   top: 30;
+}
+input[type="text"] {
+  width: 50%;
+  padding: 15px 22px;
+  margin: 10px 5px;
+  box-sizing: border-box;
+  font-size: 30px;
+  border: 4px solid black;
+  border-radius: 5px;
+  margin-bottom: 5%;
+}
+
+.Search-intro {
+  width: 25%;
+  padding: 15px 22px;
+  margin: 10px 10px;
+  box-sizing: border-box;
+  font-size: 30px;
+  border: 4px solid black;
+  border-radius: 5px;
+  float: left;
+  position: absolute;
+  left: 20%;
+  text-align: center;
+}
+.ListView {
+  width: 25%;
+  padding: 15px 22px;
+  margin: 10px 10px;
+  box-sizing: border-box;
+  font-size: 30px;
+  border: 4px solid black;
+  border-radius: 5px;
+  text-align: center;
+  position: relative;
+  /* left: 70%; */
+  float: right;
+  margin-right: 20%;
 }
