@@ -1,10 +1,10 @@
-import React, { Component, Fragment } from "react";
+import React from "react";
 import ReactDOM from "react-dom";
 //import { Navbar } from "react-bootstrap";
 import $ from "jquery";
 import "./index.css";
 import logo from "./github-logo-1.png";
-import Search from "./components/Search.jsx";
+//import Search from "./components/Search.jsx";
 import RepoList from "./components/RepoList.jsx";
 import ListView from "./components/ListView.jsx";
 
@@ -84,7 +84,7 @@ class App extends React.Component {
     return (
       <div className="resultBadge">
         <span className="userImg">
-          <img src={user.avatar_url} width="128" height="128" />
+          <img src={user.avatar_url} width="128" height="128" alt="ss" />
         </span>
         <p className="userInfo">
           <span className="bold"> Username:</span>
@@ -102,12 +102,18 @@ class App extends React.Component {
   }
 
   render() {
-    const { user, repos } = this.state;
+    const { user } = this.state;
     return (
       <div className="GitHubSearch">
         <div className="Search-header">
           <header className="Search-header">
-            <img className="logo" src={logo} width="128" height="128" />
+            <img
+              className="logo"
+              src={logo}
+              width="128"
+              height="128"
+              alt="aa"
+            />
             <h1 className="header1">Github Fetcher</h1>
             <p className="headSentence">
               Get User's Repos and the Other Details by typing Username.

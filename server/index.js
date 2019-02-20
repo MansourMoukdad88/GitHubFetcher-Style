@@ -2,6 +2,7 @@ var express = require("express");
 var bodyParser = require("body-parser");
 var sqlData = require("./database/index.js");
 const helpers = require("./helpers/github.js");
+//const port = process.env.PORT || 5000;
 
 let app = express();
 var cors = require("cors");
@@ -48,8 +49,7 @@ app.get("/repos", function(req, res) {
   });
 });
 
-//let port = 1128;
-const port = process.env.PORT || 5000;
+let port = 1128;
 
 app.listen(port, function() {
   console.log(`listening on port ${port}`);
