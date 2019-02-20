@@ -110,7 +110,7 @@ class App extends React.Component {
             <img className="logo" src={logo} width="128" height="128" />
             <h1 className="header1">Github Fetcher</h1>
             <p className="headSentence">
-              Get User's Repos and the Other Details by typing Username
+              Get User's Repos and the Other Details by typing Username.
             </p>
           </header>
         </div>
