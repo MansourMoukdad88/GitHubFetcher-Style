@@ -1,12 +1,12 @@
 var mysql = require("mysql");
-if (process.env.NODE_ENV === 'production') {
-
-var connection = mysql.createConnection({
-  host: "sql7.freemysqlhosting.net",
-  user: "sql7279609",
-  password: "6gi2mD4wup",
-  database: "sql7279609"
-});
+if (process.env.NODE_ENV === "production") {
+  var connection = mysql.createConnection({
+    // connectionLimit: 100,
+    host: "sql7.freemysqlhosting.net",
+    user: "sql7279609",
+    password: "6gi2mD4wup",
+    database: "sql7279609"
+  });
 } else {
   var connection = mysql.createConnection({
     host: "localhost",
