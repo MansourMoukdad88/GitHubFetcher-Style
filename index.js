@@ -1,7 +1,7 @@
 var express = require("express");
 var bodyParser = require("body-parser");
-var sqlData = require("../database/index.js");
-const helpers = require("../helpers/github.js");
+var sqlData = require("./database/index.js");
+const helpers = require("./helpers/github.js");
 const port = process.env.PORT || 5000;
 
 let app = express();
