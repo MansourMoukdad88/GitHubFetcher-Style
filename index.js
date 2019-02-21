@@ -1,7 +1,7 @@
 var express = require("express");
 var bodyParser = require("body-parser");
-var sqlData = require("../database/index.js");
-const helpers = require("../helpers/github.js");
+var sqlData = require("./database/index.js");
+const helpers = require("./helpers/github.js");
 const port = process.env.PORT || 5000;
 
 let app = express();
@@ -14,6 +14,7 @@ app.use(cors());
 app.use(express.static(__dirname + "/../client/dist"));
 
 app.post("/repos", function(req, res) {
+
   //console.log("Post request from server", req.body);
   // TODO - your code here!
   // This route should take the github username provided
