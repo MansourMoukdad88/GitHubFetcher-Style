@@ -14,7 +14,6 @@ app.use(cors());
 app.use(express.static(__dirname + "/../client/dist"));
 
 app.post("/repos", function(req, res) {
-
   //console.log("Post request from server", req.body);
   // TODO - your code here!
   // This route should take the github username provided
@@ -58,7 +57,16 @@ app.get("/repos", function(req, res) {
 // app.get("*", (req, res) => {
 //   res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
 // });
+// Heroku Deploy:
 
+if (process.env.NODE_ENV === "production") {
+  // Serve any static files
+  app.use(express.static(path.join(__dirname, "client/build")));
+  // Handle React routing, return all requests to React app
+  app.get("*", function(req, res) {
+    res.sendFile(path.join(__dirname, "client/build", "index.html"));
+  });
+}
 app.listen(port, function() {
   console.log(`listening on port ${port}`);
 });
