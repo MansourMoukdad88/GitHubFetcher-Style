@@ -2,10 +2,11 @@
   "name": "github-fetcher",
   "version": "1.0.0",
   "scripts": {
+    "start": "node server",
     "client": "cd client && yarn start",
-    "server": "nodemon index.js",
+    "server": "cd server && nodemon index.js",
     "dev": "concurrently --kill-others-on-fail \"yarn server\" \"yarn client\"",
-    "start": "node index.js"
+    "heroku-postbuild": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
   },
   "dependencies": {
     "body-parser": "^1.18.3",

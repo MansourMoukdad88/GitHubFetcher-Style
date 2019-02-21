@@ -1,7 +1,7 @@
 var express = require("express");
 var bodyParser = require("body-parser");
-var sqlData = require("./database/index.js");
-const helpers = require("./helpers/github.js");
+var sqlData = require("../database/index.js");
+const helpers = require("../helpers/github.js");
 const port = process.env.PORT || 5000;
 
 let app = express();
@@ -39,7 +39,7 @@ app.post("/repos", function(req, res) {
   });
 });
 
-app.get("/", function(req, res) {
+app.get("/repos", function(req, res) {
   // TODO - your code here!
   // This route should send back the top 25 repos
   sqlData.getRepos(req.body.username, function(data) {
@@ -50,13 +50,7 @@ app.get("/", function(req, res) {
 });
 
 //let port = 1128;
-// if (process.env.NODE_ENV === "production") {
-//   //set static folder
-//   app.use(express.static("client/build"));
-// }
-// app.get("*", (req, res) => {
-//   res.sendFile(path.resolve(__dirname, "client", "build", "index.html"));
-// });
+
 // Heroku Deploy:
 
 if (process.env.NODE_ENV === "production") {
