@@ -69,7 +69,6 @@ class App extends React.Component {
       repos
     });
   }
-
   renderRepos(repos) {
     return repos.map(item => {
       return (
